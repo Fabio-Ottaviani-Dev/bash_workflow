@@ -5,7 +5,6 @@
 # -------------------------------------------------------------------------------------
 
 alias laravel-dir="cd ~/Sites/www/laravel/ && sls"
-alias laracast-dir="cd ~/Sites/www/_dev/Laracast/ && sls"
 
 # preset
 devDir=~/Sites/www/laravel/
@@ -78,7 +77,7 @@ laravelNewProject()
 	APP_URL=http://$projectName.dev
 
 	DB_CONNECTION=mysql
-	DB_HOST=$projectName.dev
+	DB_HOST=$projectName.test
 	DB_PORT=3306
 	DB_DATABASE=$projectName
 	DB_USERNAME=homestead

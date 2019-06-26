@@ -6,6 +6,7 @@
 
 phpV="php7.3.1"
 editor="atom"
+
 # -------------------------------------------------------------------------------------
 # ** Apache / php **
 # -------------------------------------------------------------------------------------
@@ -54,21 +55,14 @@ function dbBackup()
 
 # preset
 	backupDir=~/Sites/www/
-
 	export MYSQL_PWD=root
 
 	sql="SELECT GROUP_CONCAT(schema_name SEPARATOR ' ') AS db_list FROM information_schema.schemata WHERE schema_name NOT IN ('information_schema', 'mysql', 'performance_schema', 'phpmyadmin', 'sys')"
-
 	dbList=$(mysql -u root -se "$sql")
-
 	printf "db backup in progress ... \\n"
-
 	cd "$backupDir" || exit;
-
 	mysqldump -hlocalhost -uroot --opt --databases "$dbList" > db_dump.sql
-
 	printf "Done\\n"
-
 	ls
 }
 
