@@ -1,5 +1,5 @@
 # Bash Workflow
-Design to improve the daily Workflow with: Flask, Laravel, Mamp;
+Design to improve the daily Workflow with: GIT, Flask, Laravel, Mamp;
 check the relative file for the single implementation / functions.
 
 ## Notice
