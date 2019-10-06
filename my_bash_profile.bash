@@ -53,26 +53,26 @@ alias off="sudo shutdown -h now"
 alias bp-edit="atom ~/bash_workflow/ & subl ~/bash_profile"
 
 # Reload .bash_profile
-alias bp-reload="source ~/bash_profile && clear"
+alias bp-reload="source ~/.bash_profile && clear"
 
 # -------------------------------------------------------------------------------------
 # Dev Tools Conf
 # -------------------------------------------------------------------------------------
 
 # composer
-alias composer="/usr/local/bin/composer"
-export PATH=~/.composer/vendor/bin:$PATH
+# alias composer="/usr/local/bin/composer"
+# export PATH=~/.composer/vendor/bin:$PATH
 
-composer-update()
-{
-	currentDir="$PWD"
-	cd ~/.composer/ || exit
-	composer clear-cache
-	composer self-update
-	composer update
+# composer-update()
+# {
+# 	currentDir="$PWD"
+# 	cd ~/.composer/ || exit
+# 	composer clear-cache
+# 	composer self-update
+# 	composer update
 	# composer global require "laravel/installer"
-	cd "$currentDir" && clear
-}
+# 	cd "$currentDir" && clear
+# }
 
 # Homebrew
 PATH=$(brew --prefix)/bin:$PATH
@@ -86,8 +86,8 @@ export PATH=/usr/local/bin/npm:$PATH
 
 # Setting PATH for Python 3.7.3
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7.3/bin:${PATH}"
-export PATH
+# PATH="/Library/Frameworks/Python.framework/Versions/3.7.3/bin:${PATH}"
+# export PATH
 
 # -------------------------------------------------------------------------------------
 # Ubuntu virtual machine

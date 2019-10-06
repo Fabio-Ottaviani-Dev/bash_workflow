@@ -4,7 +4,7 @@
 # MAMP server conf and maintain
 # -------------------------------------------------------------------------------------
 
-phpV="php7.3.1"
+phpV="php7.3.7"
 editor="atom"
 
 # -------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ alias sql-log="cat /dev/null > /Applications/MAMP/logs/mysql_sql.log && tail -f 
 function dbBackup()
 {
 
-	# referring
+# References:
 	# https://unix.stackexchange.com/questions/293966/suppress-warning-messages-from-mysql-in-shell-script-but-allow-errors
 	# https://stackoverflow.com/questions/1636977/bash-script-select-from-database-into-variable
 	# mysql -u root -proot
