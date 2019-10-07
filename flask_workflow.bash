@@ -11,12 +11,13 @@
 
 flaskNewProject()
 {
+	# change it with your basic path
 	cd ~/Sites/FSWD/ || exit
 	printf "\n# Please enter the Flask project name: "
 	read projectName
 	mkdir $projectName && cd $projectName/
 
-	printf "\n# Create and activate a virtual environment, update pip, install flask.\n\n"
+	printf "\n# Create and activate a virtual environment, update pip, install flask stuff.\n\n"
 
 	python3 -m venv venv
 	virtualenv -p python3 venv
