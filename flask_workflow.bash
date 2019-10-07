@@ -28,6 +28,7 @@ flaskNewProject()
 	pip3 install python-dotenv
 	pip3 install flask-sqlalchemy
 	pip3 install psycopg2
+	pip3 install Flask-Migrate
 
 	mkdir app
 	mkdir app/templates
