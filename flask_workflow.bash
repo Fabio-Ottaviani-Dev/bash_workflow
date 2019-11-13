@@ -166,3 +166,26 @@ from app import routes" > "__init__.py"
 alias flask-napi=flaskNewApi
 
 # -------------------------------------------------------------------------------------
+# Create a Virutal Enviornment
+# -------------------------------------------------------------------------------------
+# Docs / Links:
+# 1. https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+make-vm()
+{
+	echo "Do you wish to install a python3 virtual environments in the current folder ?"
+	select yn in "Yes" "No"; do
+		case $yn in
+		    Yes)
+					python3 -m pip install --user --upgrade pip
+					python3 -m pip install --user virtualenv
+					python3 -m venv env
+					source env/bin/activate
+					echo 'python3 virtual environment ready'
+					break;;
+		    No)
+					echo 'OK see ya! \(@_@)/'
+					break;;
+					#exit;;
+		esac
+	done
+}
