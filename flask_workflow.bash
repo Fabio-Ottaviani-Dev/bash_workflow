@@ -16,7 +16,7 @@
 flaskNewSite()
 {
 	# change it with your basic path
-	cd ~/Sites/FSWD/ || exit
+	# cd ~/Sites/ || exit
 	printf "\n# Please enter the Flask project name: "
 	read projectName
 	mkdir $projectName && cd $projectName/
@@ -81,7 +81,7 @@ from app import routes" > "__init__.py"
 	# todo ttab -d "~/Sites/FSWD/$projectName" && clear
 
 	printf "\n# run flask App.\n\n"
-	#flask run
+	#flask run --reload
 }
 
 alias flask-nws=flaskNewSite
@@ -94,7 +94,7 @@ alias flask-nws=flaskNewSite
 flaskNewApi()
 {
 	# change it with your basic path
-	cd ~/Sites/Full-Stack-Web-Developer-Nanodegree/FSWD/02-API-Development-and-Documentation/app/ || exit
+	# cd ~/Sites/ || exit
 	printf "\n# Please enter the Flask project name: "
 	read projectName
 	mkdir $projectName && cd $projectName/
@@ -160,7 +160,9 @@ from app import routes" > "__init__.py"
 	atom .
 
 	printf "\n# Run flask App.\n\n"
-	flask run
+	flask run --reload
+
+	ttab && curl -X GET http://127.0.0.1:5000/
 }
 
 alias flask-napi=flaskNewApi
@@ -170,7 +172,7 @@ alias flask-napi=flaskNewApi
 # -------------------------------------------------------------------------------------
 # Docs / Links:
 # 1. https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
-make-vm()
+make_python_virtualenv()
 {
 	echo "Do you wish to install a python3 virtual environments in the current folder ?"
 	select yn in "Yes" "No"; do
@@ -180,6 +182,7 @@ make-vm()
 					python3 -m pip install --user virtualenv
 					python3 -m venv env
 					source env/bin/activate
+					pip install --upgrade pip
 					echo 'python3 virtual environment ready'
 					break;;
 		    No)
@@ -189,3 +192,5 @@ make-vm()
 		esac
 	done
 }
+
+alias flask-venv=make_python_virtualenv
